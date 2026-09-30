@@ -1,0 +1,16 @@
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\Database.txt
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\ID.exe
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\ID.deps.json
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\ID.runtimeconfig.json
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\ID.dll
+C:\Users\szila\Downloads\ID\ID\bin\Debug\net8.0\ID.pdb
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.AssemblyInfoInputs.cache
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.AssemblyInfo.cs
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.csproj.CoreCompileInputs.cache
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.sourcelink.json
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.dll
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\refint\ID.dll
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.pdb
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ID.genruntimeconfig.cache
+C:\Users\szila\Downloads\ID\ID\obj\Debug\net8.0\ref\ID.dll

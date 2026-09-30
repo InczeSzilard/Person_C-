@@ -1,0 +1,5 @@
+Employee,John Smith,28,E1001,55000
+Employee,Sara Lee,34,E1002,62000
+Manager,Anna Brown,41,M2001,85000,Sales,8
+Manager,Mike Johnson,45,M2002,92000,Engineering,15
+ 
