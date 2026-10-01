@@ -1,16 +1,14 @@
-﻿using System.Text;
+﻿using ID;
+using System.Text;
 
-public class Caesar
+public class Caesar : ICaesar
 {
-    // Number of positions used to shift each letter.
     private const int SHIFT = 3;
 
-    // Encodes a string using the Caesar cipher.
-    public static string Encode(string text)
+    public string Encode(string text)
     {
         StringBuilder result = new StringBuilder();
 
-        // Process every character in the text.
         foreach (char original in text)
         {
             char c = original;
@@ -40,12 +38,10 @@ public class Caesar
         return result.ToString();
     }
 
-    // Decodes a string using the Caesar cipher.
-    public static string Decode(string text)
+    public string Decode(string text)
     {
         StringBuilder result = new StringBuilder();
 
-        // Process every character in the encoded text.
         foreach (char original in text)
         {
             char c = original;

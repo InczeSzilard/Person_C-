@@ -11,8 +11,10 @@ namespace ID
 
         // Database object used to load and save information
         private static Database database;
-
+        // Caesar encryption object used for passwords
+        private static ICaesar caesar = new Caesar();
         // Main method - program starts here
+
         public static void Main(string[] args)
         {
             try
@@ -134,7 +136,7 @@ namespace ID
             }
 
             // Encode the entered password using Caesar encryption
-            string encodedPassword = Caesar.Encode(password);
+            string encodedPassword = caesar.Encode(password);
 
             // Compare the encoded password with the stored password
             if (encodedPassword != person.GetPassword())
@@ -328,7 +330,7 @@ namespace ID
 
             // Passwords are encoded before being stored
             string encodedPassword =
-                Caesar.Encode(password);
+                caesar.Encode(password);
 
             Person person;
 
@@ -574,8 +576,7 @@ namespace ID
 
             // Encode the new password
             string encodedPassword =
-                Caesar.Encode(password);
-
+                caesar.Encode(password);
             // Update the person in the company
             bool success =
                 company.UpdatePerson(
