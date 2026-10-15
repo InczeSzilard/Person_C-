@@ -16,8 +16,9 @@ public class Director : Person
         string name,
         string username,
         string password,
+        string role,
         double salary)
-        : base(id, name, username, password, salary)
+        : base(id, name, username, password,role, salary)
     {
         managerCounter = 0;
     }
@@ -29,6 +30,7 @@ public class Director : Person
         string name,
         string username,
         string password,
+        string role,
         double salary)
     {
         if (instance == null)
@@ -38,6 +40,7 @@ public class Director : Person
                 name,
                 username,
                 password,
+                role,
                 salary
             );
         }
@@ -63,11 +66,7 @@ public class Director : Person
         this.managerCounter = managerCounter;
     }
 
-    // Returns the role of this person.
-    public override string GetRole()
-    {
-        return "Director";
-    }
+ 
 
     // Displays the Director's information.
     public override void DisplayInfo()

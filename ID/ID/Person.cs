@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 public abstract class Person
 {
@@ -7,6 +8,7 @@ public abstract class Person
     private string name;
     private string username;
     private string password;
+    private string role;
     private double salary;
 
     // Creates a Person with the basic information.
@@ -15,12 +17,14 @@ public abstract class Person
         string name,
         string username,
         string password,
+        string role,
         double salary)
     {
         this.id = id;
         this.name = name;
         this.username = username;
         this.password = password;
+        this.role = role;
         this.salary = salary;
     }
 
@@ -79,11 +83,15 @@ public abstract class Person
     }
 
     // Each child class must provide its own role.
-    public abstract string GetRole();
+    public string GetRole()
+    {
+        return role;
+    }
 
-    // Displays the common information of a person.
-    // Child classes can override this method to display
-    // additional information.
+    public void SetRole(string role)
+    {
+        this.role = role;
+    }
     public virtual void DisplayInfo()
     {
         Console.WriteLine(
@@ -91,7 +99,7 @@ public abstract class Person
             " | Name: " + name +
             " | Username: " + username +
             " | Salary: " + salary +
-            " | Role: " + GetRole()
+            " | Role: " + role
         );
     }
 }

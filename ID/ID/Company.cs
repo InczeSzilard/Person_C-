@@ -10,7 +10,7 @@ public class Company
     private int managerCounter;
 
     // Maximum number of people allowed in the company.
-    private const int MAX_PEOPLE = 20;
+    private const int MAX_PEOPLE = 30;
 
     // Constructor
     public Company()
@@ -480,7 +480,7 @@ public class Company
 
         // Display the number of people.
         Console.WriteLine(
-            "Total people: " + people.Count + " / 20"
+            "Total people: " + people.Count + " / 30"
         );
 
         // Display the number of managers.

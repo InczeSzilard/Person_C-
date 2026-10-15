@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xPCv+yCM6uc=",
+  "dgSpecHash": "QC8eKJvepxs=",
   "success": true,
   "projectFilePath": "C:\\Users\\szila\\Downloads\\ID\\ID\\ID.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\szila\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\szila\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+  ],
   "logs": []
 }

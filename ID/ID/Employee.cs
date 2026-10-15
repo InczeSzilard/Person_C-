@@ -11,9 +11,10 @@ public class Employee : Person
         string name,
         string username,
         string password,
+        string role,
         double salary,
         string managerName)
-        : base(id, name, username, password, salary)
+        : base(id, name, username, password,role, salary)
     {
         this.managerName = managerName;
     }
@@ -30,11 +31,7 @@ public class Employee : Person
         this.managerName = managerName;
     }
 
-    // Returns the role of this person.
-    public override string GetRole()
-    {
-        return "Employee";
-    }
+   
 
     // Displays the employee's information.
     public override void DisplayInfo()

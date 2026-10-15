@@ -1,6 +1,6 @@
+1|John Smith|john|khoor|3000|Employee|Bob Manager
+2|Mary Jones|mary|khoor|3200|Employee|Bob Manager
+3|Peter Brown|peter|khoor|3500|Employee|Alice Manager
 4|Bob Manager|bob|pdqjhu|5000|Manager|
 5|Alice Manager|alice|pdqjhu|5500|Manager|
 6|David Director|david|gluhfwru|8000|Director|
-2|Mary Jones|mary|khoor|3200|Employee|Bob Manager
-3|Peter Brown|peter|khoor|3500|Employee|Alice Manager
-87|James Anderson|james|nkrru232|3000|Employee|Bob Manager

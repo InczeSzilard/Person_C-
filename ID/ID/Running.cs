@@ -10,7 +10,10 @@ namespace ID
         private static Company company = new Company();
 
         // Database object used to load and save information
-        private static Database database;
+        //private static Database database;
+
+        private static SQLiteDatabase sqliteDatabase;
+
         // Caesar encryption object used for passwords
         private static ICaesar caesar = new Caesar();
         // Main method - program starts here
@@ -18,14 +21,25 @@ namespace ID
         public static void Main(string[] args)
         {
             try
-            {
+            {/*
                 // Create the database object and locate Database.txt
                 database = new Database("Database.txt");
-
+                
                 // Load all people from the database file
                 database.LoadCompany(company);
+                */
+
+                string sqlitePath =
+     @"C:\Users\szila\Downloads\ID\ID\company.db";
+
+                sqliteDatabase = new SQLiteDatabase(sqlitePath);
+                sqliteDatabase.LoadPeopleIntoCompany(company);
 
                 bool running = true;
+
+      
+               
+
 
                 // Main menu loop
                 while (running)
@@ -42,6 +56,7 @@ namespace ID
                     Console.WriteLine("8. Show managers");
                     Console.WriteLine("9. Show employees");
                     Console.WriteLine("10. Save & Exit");
+                    Console.WriteLine("11. Find person");
 
                     Console.Write("Choose: ");
                     string choice = Console.ReadLine();
@@ -88,8 +103,12 @@ namespace ID
 
                         case "10":
                             // Save all changes before closing
-                            database.SaveCompany(company);
+                            
                             running = false;
+                            break;
+
+                        case "11":
+                            FindPersonMenu();
                             break;
 
                         default:
@@ -403,6 +422,7 @@ namespace ID
                     name,
                     username,
                     encodedPassword,
+                    role,
                     salary,
                     managerName
                 );
@@ -420,6 +440,7 @@ namespace ID
                     name,
                     username,
                     encodedPassword,
+                    role,
                     salary
                 );
             }
@@ -447,6 +468,7 @@ namespace ID
                     name,
                     username,
                     encodedPassword,
+                    role,
                     salary
                 );
             }
@@ -469,7 +491,7 @@ namespace ID
             if (company.AddPerson(person))
             {
                 // Save the updated company to the database
-                database.SaveCompany(company);
+                sqliteDatabase.AddPerson(person);
 
                 Console.WriteLine(
                     "Person added successfully."
@@ -590,12 +612,17 @@ namespace ID
 
             if (success)
             {
-                // Save changes to the database
-                database.SaveCompany(company);
+                bool saved = sqliteDatabase.UpdatePerson(
+        id,
+        name,
+        username,
+        encodedPassword,
+        salary,
+        managerName
+    );
 
-                Console.WriteLine(
-                    "Person updated successfully."
-                );
+                if (saved)
+                    Console.WriteLine("Person updated successfully.");
             }
             else
             {
@@ -637,11 +664,12 @@ namespace ID
             if (company.DeletePerson(id))
             {
                 // Save the changes
-                database.SaveCompany(company);
+                bool deleted = sqliteDatabase.DeletePerson(id);
 
-                Console.WriteLine(
-                    "Person deleted successfully."
-                );
+                if (deleted)
+                    Console.WriteLine("Person deleted successfully.");
+                else
+                    Console.WriteLine("Deleted from memory, but no matching SQLite record was found.");
             }
             else
             {
@@ -742,8 +770,37 @@ namespace ID
 
             Pause();
         }
+        private static void FindPersonMenu()
+        {
+            Console.WriteLine("============== FIND PERSON ==============");
+            Console.Write("Enter name: ");
 
-      
+            string name = Console.ReadLine() ?? "";
+
+            FindPeople finder = new FindPeople();
+
+            // Search using LINQ
+            Person person = finder.FindWithLinq(
+                company.GetPeople(), name);
+
+            if (person == null)
+            {
+                Console.WriteLine("Person not found.");
+            }
+            else
+            {
+                Console.WriteLine("Person found!");
+                Console.WriteLine("ID: " + person.GetId());
+                Console.WriteLine("Name: " + person.GetName());
+                Console.WriteLine("Username: " + person.GetUsername());
+                Console.WriteLine("Role: " + person.GetRole());
+                Console.WriteLine("Salary: " +
+                    person.GetSalary().ToString("F2"));
+            }
+
+            Pause();
+        }
+
         // PAUSE
         // Waits for the user to press Enter
         // before returning to the menu

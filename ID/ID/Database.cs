@@ -80,6 +80,7 @@ public class Database
                     name,
                     username,
                     password,
+                    role,
                     salary
                 );
 
@@ -94,6 +95,7 @@ public class Database
                     name,
                     username,
                     password,
+                    role,
                     salary
                 );
 
@@ -140,6 +142,7 @@ public class Database
                     name,
                     username,
                     password,
+                    role,
                     salary,
                     managerName
                 );
@@ -172,11 +175,11 @@ public class Database
                 person.GetName() + "|" +
                 person.GetUsername() + "|" +
                 person.GetPassword() + "|" +
+                person.GetRole() + "|" +
                 person.GetSalary().ToString(
                     CultureInfo.InvariantCulture
-                ) +
-                "|" +
-                person.GetRole();
+                );
+               
 
             // Employees also store their manager's name.
             if (person is Employee employee)

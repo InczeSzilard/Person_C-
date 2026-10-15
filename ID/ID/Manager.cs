@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 
 public class Manager : Person
 {
@@ -11,8 +12,9 @@ public class Manager : Person
         string name,
         string username,
         string password,
+        string role,
         double salary)
-        : base(id, name, username, password, salary)
+        : base(id, name, username, password,role, salary)
     {
         // A new manager starts with no employees.
         teamSize = 0;
@@ -30,11 +32,7 @@ public class Manager : Person
         this.teamSize = teamSize;
     }
 
-    // Returns the role of this person.
-    public override string GetRole()
-    {
-        return "Manager";
-    }
+  
 
     // Displays the manager's information.
     public override void DisplayInfo()
